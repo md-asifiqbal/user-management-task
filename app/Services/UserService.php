@@ -12,10 +12,20 @@ class UserService
         $this->model = new User();
     }
 
-    public function index(array $relations = [], array $columns = ['*'])
+    public function index(string $search = '', array $relations = [], array $columns = ['*'])
     {
         try {
-            return $this->model->with($relations)->where('role', 'user')->select($columns)->get();
+
+            $data = $this->model->with($relations)->where('role', 'user');
+            $data->when($search, function ($query, $search) {
+                $query->where(function($query) use ($search) {
+                    $query->where('username', 'like', "%{$search}%")
+                        ->orWhere('email', 'like', "%{$search}%");
+                });
+            });
+
+
+            return $data->select($columns)->latest('created_at')->paginate(request('per_page', 10));
         } catch (\Exception $e) {
             throw $e;
         }

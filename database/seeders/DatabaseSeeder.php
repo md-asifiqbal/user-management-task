@@ -13,18 +13,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        User::create([
-            'username' => 'Admin',
-            'email' => 'admin@example.com',
-            'password' => '123456',
-            'role' => 'admin',
-        ]);
 
-        User::create([
-            'username' => 'User',
-            'email' => 'user@example.com',
-            'password' => '123456',
-            'role' => 'user',
+        $this->call([
+            AdminSeeder::class,
+            UserSeeder::class
         ]);
     }
 }
