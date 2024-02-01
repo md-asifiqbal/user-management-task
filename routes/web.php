@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Admin\Users\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,11 @@ Route::get('/', function () {
     return to_route('login');
 });
 
-Auth::routes(['register'=>false]);
+Auth::routes(['register' => false]);
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/profile', [HomeController::class, 'profile'])->name('profile.edit');
+Route::put('/profile', [HomeController::class, 'updateProfile'])->name('profile.update');
 
-require __DIR__.'/admin.php';
+
+require __DIR__ . '/admin.php';
