@@ -10,8 +10,7 @@
                             <div class="card-header">
                                 <h4>
                                     {{ __('User List') }} <a href="{{ route('admin.users.create') }}"
-                                        class="btn btn-primary float-end ajax-click-page">{{ __('Add
-                                                                                                                                                                                User') }}</a>
+                                        class="btn btn-primary float-end ajax-click-page">{{ __('Add User') }}</a>
                                 </h4>
                             </div>
                             <div class="card-body">

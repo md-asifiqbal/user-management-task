@@ -35,21 +35,20 @@
                     </div>
                 </div>
                 <div class="col-md-12  mb-3">
-                    <label for="password" class="mb-1">{{ __('Password') }} </label>
+                    <label for="password" class="mb-1">{{ __('Password') }}</label>
                     <div class="input-group mb-3">
                         <input type="password" name="password" id="password" class="form-control"
                             placeholder="{{ __('Password') }}" aria-label="{{ __('Password') }}"
-                            aria-describedby="password_btn" >
+                            aria-describedby="password_btn">
                         <button class="btn btn-outline-secondary" type="button" id="password_btn">Show</button>
                     </div>
                 </div>
                 <div class="col-md-12  mb-3">
-                    <label for="password_confirmation" class="mb-1">{{ __('Confirm Password') }}</label>
+                    <label for="password_confirmation" class="mb-1">{{ __('Confirm Password') }} </label>
                     <div class="input-group mb-3">
                         <input type="password" name="password_confirmation" id="password_confirmation"
                             class="form-control" placeholder="{{ __('Confirm Password') }}"
-                            aria-label="{{ __('Confirm Password') }}" aria-describedby="password_confirmation_btn"
-                            >
+                            aria-label="{{ __('Confirm Password') }}" aria-describedby="password_confirmation_btn">
                         <button class="btn btn-outline-secondary" type="button"
                             id="password_confirmation_btn">Show</button>
                     </div>
